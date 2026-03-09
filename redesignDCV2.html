@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigiCorner | Digital Marketing & Design Agency</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #f32500;
+        }
+        body { 
+            background-color: #ffffff; 
+            color: #000000; 
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        /* Container untuk simulasi mobile jika di desktop lebar (opsional) */
+        .mobile-container {
+            max-width: 414px;
+            margin: 0 auto;
+            background: white;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .text-primary-red { color: var(--primary-red); }
+        .bg-primary-red { background-color: var(--primary-red); }
+
+        /* Animation: Scroll Right for Marquee */
+        @keyframes scroll-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-marquee {
+            display: flex;
+            width: max-content;
+            animation: scroll-right 20s linear infinite;
+        }
+        .marquee-container {
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+        }
+
+        /* Glassmorphism Effect */
+        .card-service {
+            background: #ffffff;
+            border: 1px solid #eeeeee;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .card-service:hover, .card-service:active {
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-color: var(--primary-red);
+            transform: translateY(-8px);
+            color: white;
+        }
+        .card-service:hover p { color: rgba(255, 255, 255, 0.6); }
+
+        /* Hero Shape Mobile Optimization */
+        .hero-shape {
+            background: linear-gradient(135deg, var(--primary-red) 0%, #000000 100%);
+            clip-path: polygon(0 15%, 100% 0%, 100% 85%, 0% 100%);
+        }
+    </style>
+</head>
+<body class="selection:bg-red-500 selection:text-white">
+
+    <nav class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex justify-between p-5 items-center">
+            <div class="text-xl font-black tracking-tighter">DIGI<span class="text-primary-red">CORNER</span></div>
+            <div class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-widest text-black/60">
+                <a href="#home" class="hover:text-primary-red transition">Home</a>
+                <a href="#services" class="hover:text-primary-red transition">Services</a>
+                <a href="#contact" class="hover:text-primary-red transition">Contact</a>
+            </div>
+            <button class="bg-black text-white px-5 py-2.5 rounded-full text-[10px] md:text-xs font-black hover:bg-primary-red transition duration-300 uppercase tracking-widest">
+                Brief Us
+            </button>
+        </div>
+    </nav>
+
+    <section id="home" class="relative pt-32 pb-20 px-6">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+                <span class="text-primary-red font-black text-xs uppercase tracking-[0.3em]">Based in Indonesia</span>
+                <h1 class="text-5xl md:text-8xl font-black leading-[0.95] tracking-tighter mt-4 mb-8 uppercase">
+                    WE DESIGN <br><span class="text-primary-red">EMPIRES</span> <br>NOT JUST WEBS.
+                </h1>
+                <p class="text-sm md:text-lg text-black/50 max-w-sm mb-10 leading-relaxed font-medium">
+                    Digital marketing & design agency yang fokus pada hasil konversi dan pertumbuhan brand secara eksponensial.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button class="bg-primary-red text-white px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-black transition-all">Start Project</button>
+                    <button class="border-2 border-black text-black px-8 py-4 rounded-xl font-black uppercase tracking-widest text-xs hover:bg-black hover:text-white transition-all">View Work</button>
+                </div>
+            </div>
+            <div class="relative mt-10 lg:mt-0">
+                <div class="hero-shape w-full h-[350px] md:h-[500px] rounded-3xl opacity-95 shadow-2xl"></div>
+                <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 hidden sm:block">
+                    <p class="text-3xl font-black italic tracking-tighter">100%</p>
+                    <p class="text-[10px] font-bold uppercase text-black/40">Data Driven Design</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="py-12 border-y border-gray-100 bg-gray-50 overflow-hidden">
+        <div class="marquee-container">
+            <div class="animate-marquee flex gap-12 md:gap-24 opacity-30 grayscale font-black text-2xl italic tracking-tighter uppercase">
+                <span>Microsoft</span> <span>Adobe</span> <span>Nike</span> <span>Spotify</span> <span>Tesla</span> <span>SpaceX</span>
+                <span>Microsoft</span> <span>Adobe</span> <span>Nike</span> <span>Spotify</span> <span>Tesla</span> <span>SpaceX</span>
+            </div>
+        </div>
+    </div>
+    
+    <section id="about" class="py-24 px-6 relative overflow-hidden">
+        <div class="absolute -left-20 top-1/2 w-64 h-64 border border-gray-100 rounded-full -z-10"></div>
+        
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
+            
+            <div class="relative">
+                <div class="relative z-10 rounded-2xl overflow-hidden border-[12px] border-white shadow-2xl">
+                    <div class="aspect-[4/5] bg-gray-100 flex items-center justify-center">
+                        <span class="text-black/10 font-black text-6xl rotate-90 uppercase">DigiCorner</span>
+                    </div>
+                </div>
+                
+                <div class="absolute -bottom-10 -right-10 bg-black text-white p-8 rounded-xl shadow-2xl z-20 hidden md:block max-w-[240px]">
+                    <div class="text-primary-red text-4xl font-black mb-2">10+</div>
+                    <p class="text-xs font-bold uppercase tracking-widest leading-relaxed">Tahun Pengalaman dalam Transformasi Digital</p>
+                </div>
+                
+                <div class="absolute -top-6 -left-6 grid grid-cols-4 gap-2 opacity-20">
+                    <div class="w-2 h-2 bg-primary-red rounded-full"></div><div class="w-2 h-2 bg-primary-red rounded-full"></div><div class="w-2 h-2 bg-primary-red rounded-full"></div><div class="w-2 h-2 bg-primary-red rounded-full"></div>
+                    <div class="w-2 h-2 bg-primary-red rounded-full"></div><div class="w-2 h-2 bg-primary-red rounded-full"></div><div class="w-2 h-2 bg-primary-red rounded-full"></div><div class="w-2 h-2 bg-primary-red rounded-full"></div>
+                </div>
+            </div>
+
+            <div>
+                <div class="inline-block px-4 py-1 border border-primary-red rounded-full mb-6">
+                    <span class="text-[10px] font-black uppercase tracking-[0.3em] text-primary-red">Who We Are</span>
+                </div>
+                <h2 class="text-5xl font-black leading-tight mb-8 uppercase italic tracking-tighter">
+                    Membangun Masa Depan <span class="text-primary-red">Digital</span> Anda Lebih Berani.
+                </h2>
+                <p class="text-black/60 text-lg mb-10 leading-relaxed">
+                    Kami bukan sekadar agensi digital biasa. Di DigiCorner, kami menggabungkan data dengan kreativitas tanpa batas untuk menciptakan solusi web yang tidak hanya indah dipandang, tetapi juga mendatangkan profit nyata bagi bisnis Anda.
+                </p>
+
+                <div class="grid grid-cols-2 gap-8 border-t border-gray-100 pt-10">
+                    <div>
+                        <h4 class="text-4xl font-black text-black tracking-tighter">500<span class="text-primary-red">+</span></h4>
+                        <p class="text-xs font-bold uppercase text-black/40 mt-1">Project Selesai</p>
+                    </div>
+                    <div>
+                        <h4 class="text-4xl font-black text-black tracking-tighter">98<span class="text-primary-red">%</span></h4>
+                        <p class="text-xs font-bold uppercase text-black/40 mt-1">Kepuasan Klien</p>
+                    </div>
+                </div>
+
+                <div class="mt-12">
+                    <a href="#" class="inline-flex items-center gap-4 group">
+                        <div class="w-12 h-12 rounded-full border-2 border-black flex items-center justify-center group-hover:bg-primary-red group-hover:border-primary-red transition-all">
+                            <svg class="w-5 h-5 group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                        </div>
+                        <span class="font-black uppercase tracking-widest text-sm">Pelajari Selengkapnya</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-24 px-6 bg-gray-50">
+      <div class="max-w-7xl mx-auto">
+          <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+              <div class="max-w-xl">
+                  <span class="text-primary-red font-black uppercase tracking-widest text-xs">Our Expertise</span>
+                  <h2 class="text-4xl md:text-6xl font-[900] mt-4 uppercase tracking-tighter leading-none">High Impact <br>Solutions.</h2>
+              </div>
+              <p class="text-black/40 text-sm md:text-base max-w-xs font-medium">Kami menyediakan layanan kelas atas yang disesuaikan dengan kebutuhan bisnis Anda.</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="card-service p-10 rounded-[32px] group">
+                  <div class="w-12 h-12 bg-primary-red/10 rounded-xl flex items-center justify-center mb-8 transition-all group-hover:bg-primary-red/20">
+                      <svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z"></path></svg>
+                  </div>
+                  <h3 class="text-xl font-black mb-4 uppercase tracking-tight transition-colors">Digital Marketing</h3>
+                  <p class="text-black/50 text-sm mb-8 leading-relaxed transition-colors">Strategi pertumbuhan brand secara menyeluruh di ekosistem digital.</p>
+                  <a href="#" class="text-[10px] font-black uppercase tracking-[0.2em] text-primary-red border-b-2 border-primary-red pb-1">Read More</a>
+              </div>
+  
+              <div class="card-service p-10 rounded-[32px] group">
+                  <div class="w-12 h-12 bg-primary-red/10 rounded-xl flex items-center justify-center mb-8 transition-all group-hover:bg-primary-red/20">
+                      <svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                  </div>
+                  <h3 class="text-xl font-black mb-4 uppercase tracking-tight transition-colors">Digital Development</h3>
+                  <p class="text-black/50 text-sm mb-8 leading-relaxed transition-colors">Pembangunan aset digital yang robust, scalable, dan berperforma tinggi.</p>
+                  <a href="#" class="text-[10px] font-black uppercase tracking-[0.2em] text-primary-red border-b-2 border-primary-red pb-1">Read More</a>
+              </div>
+  
+              <div class="card-service p-10 rounded-[32px] group">
+                  <div class="w-12 h-12 bg-primary-red/10 rounded-xl flex items-center justify-center mb-8 transition-all group-hover:bg-primary-red/20">
+                      <svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                  </div>
+                  <h3 class="text-xl font-black mb-4 uppercase tracking-tight transition-colors">Analysis Optimization</h3>
+                  <p class="text-black/50 text-sm mb-8 leading-relaxed transition-colors">Optimasi berbasis data untuk meningkatkan efisiensi konversi marketing.</p>
+                  <a href="#" class="text-[10px] font-black uppercase tracking-[0.2em] text-primary-red border-b-2 border-primary-red pb-1">Read More</a>
+              </div>
+  
+              <div class="card-service p-10 rounded-[32px] group">
+                  <div class="w-12 h-12 bg-primary-red/10 rounded-xl flex items-center justify-center mb-8 transition-all group-hover:bg-primary-red/20">
+                      <svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                  </div>
+                  <h3 class="text-xl font-black mb-4 uppercase tracking-tight transition-colors">Applied Technology</h3>
+                  <p class="text-black/50 text-sm mb-8 leading-relaxed transition-colors">Implementasi teknologi terbaru untuk solusi bisnis yang inovatif.</p>
+                  <a href="#" class="text-[10px] font-black uppercase tracking-[0.2em] text-primary-red border-b-2 border-primary-red pb-1">Read More</a>
+              </div>
+  
+              <div class="card-service p-10 rounded-[32px] group">
+                  <div class="w-12 h-12 bg-primary-red/10 rounded-xl flex items-center justify-center mb-8 transition-all group-hover:bg-primary-red/20">
+                      <svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                  </div>
+                  <h3 class="text-xl font-black mb-4 uppercase tracking-tight transition-colors">CRM</h3>
+                  <p class="text-black/50 text-sm mb-8 leading-relaxed transition-colors">Mengelola interaksi pelanggan untuk loyalitas brand jangka panjang.</p>
+                  <a href="#" class="text-[10px] font-black uppercase tracking-[0.2em] text-primary-red border-b-2 border-primary-red pb-1">Read More</a>
+              </div>
+  
+              <div class="card-service p-10 rounded-[32px] group">
+                  <div class="w-12 h-12 bg-primary-red/10 rounded-xl flex items-center justify-center mb-8 transition-all group-hover:bg-primary-red/20">
+                      <svg class="w-6 h-6 text-primary-red" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                  </div>
+                  <h3 class="text-xl font-black mb-4 uppercase tracking-tight transition-colors">Paid Search Advertising</h3>
+                  <p class="text-black/50 text-sm mb-8 leading-relaxed transition-colors">Iklan berbayar yang efektif untuk trafik instan dan tertarget.</p>
+                  <a href="#" class="text-[10px] font-black uppercase tracking-[0.2em] text-primary-red border-b-2 border-primary-red pb-1">Read More</a>
+              </div>
+          </div>
+      </div>
+    </section>
+    
+    <section class="py-24 px-6 bg-black text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid lg:grid-cols-12 gap-12 items-start">
+                
+                <div class="lg:col-span-5">
+                    <span class="text-primary-red font-black uppercase tracking-[0.3em] text-xs">Why Choose Us</span>
+                    <h2 class="text-5xl lg:text-7xl font-black mt-6 leading-tight uppercase tracking-tighter">
+                        We Don't Just <br> Build <span class="text-primary-red">Webs,</span><br> We Build <br> Empires.
+                    </h2>
+                </div>
+
+                <div class="lg:col-span-7 grid md:grid-cols-2 gap-x-12 gap-y-16 mt-12 lg:mt-0">
+                    
+                    <div class="group">
+                        <div class="text-5xl font-black text-white/10 group-hover:text-primary-red transition-colors duration-500 mb-4">01</div>
+                        <h4 class="text-xl font-bold uppercase mb-4 tracking-tight">Strategy-First Approach</h4>
+                        <p class="text-white/50 text-sm leading-relaxed">
+                            Kami tidak langsung mendesain. Kami meriset audiens, kompetitor, dan data pasar untuk memastikan setiap pixel memiliki tujuan bisnis.
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <div class="text-5xl font-black text-white/10 group-hover:text-primary-red transition-colors duration-500 mb-4">02</div>
+                        <h4 class="text-xl font-bold uppercase mb-4 tracking-tight">Conversion Focused</h4>
+                        <p class="text-white/50 text-sm leading-relaxed">
+                            Desain cantik itu wajib, tapi desain yang menghasilkan uang itu prioritas kami. Kami mengoptimalkan UX untuk konversi maksimal.
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <div class="text-5xl font-black text-white/10 group-hover:text-primary-red transition-colors duration-500 mb-4">03</div>
+                        <h4 class="text-xl font-bold uppercase mb-4 tracking-tight">Cutting Edge Tech</h4>
+                        <p class="text-white/50 text-sm leading-relaxed">
+                            Menggunakan stack teknologi terbaru untuk menjamin kecepatan website secepat kilat (Lighthouse score 90+).
+                        </p>
+                    </div>
+
+                    <div class="group">
+                        <div class="text-5xl font-black text-white/10 group-hover:text-primary-red transition-colors duration-500 mb-4">04</div>
+                        <h4 class="text-xl font-bold uppercase mb-4 tracking-tight">Transparent Process</h4>
+                        <p class="text-white/50 text-sm leading-relaxed">
+                            Anda mendapatkan akses penuh ke project management board kami. Tanpa biaya tersembunyi, tanpa omong kosong.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            
+            <style>
+                /* Keyframe untuk animasi jalan dari kiri ke kanan */
+                @keyframes scroll-right {
+                    0% { transform: translateX(-50%); }
+                    100% { transform: translateX(0); }
+                }
+            
+                .animate-marquee {
+                    display: flex;
+                    width: max-content;
+                    animation: scroll-right 20s linear infinite;
+                }
+            
+                /* Gradient overlay agar logo terlihat pudar di pinggir (fade effect) */
+                .marquee-container {
+                    position: relative;
+                    overflow: hidden;
+                    user-select: none;
+                    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+                    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+                }
+            </style>
+
+            <div class="mt-24 pt-12 border-t border-white/10 overflow-hidden">
+                <div class="marquee-container">
+                    <div class="animate-marquee flex gap-16 items-center opacity-30 grayscale">
+                        
+                        <div class="flex gap-16 items-center">
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand A</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand B</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand C</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand D</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand E</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand F</span>
+                        </div>
+            
+                        <div class="flex gap-16 items-center">
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand A</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand B</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand C</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand D</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand E</span>
+                            <span class="font-black text-2xl uppercase italic tracking-tighter shrink-0">Brand F</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto bg-black rounded-[40px] p-10 md:p-20 text-white relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-80 h-80 bg-primary-red/20 blur-[100px]"></div>
+            
+            <div class="grid lg:grid-cols-2 gap-16 relative z-10">
+                <div>
+                    <h2 class="text-4xl md:text-6xl font-black leading-tight uppercase tracking-tighter">
+                        READY TO <br><span class="text-primary-red">LEVEL UP?</span>
+                    </h2>
+                    <p class="mt-8 text-white/50 text-sm md:text-base leading-relaxed max-w-sm font-medium">
+                        Konsultasikan project Anda secara gratis dan dapatkan strategi digital yang tepat sasaran.
+                    </p>
+                    <div class="mt-12 space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span class="text-primary-red font-black">E.</span>
+                            <span class="text-sm font-bold tracking-widest uppercase">hello@digicorner.com</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span class="text-primary-red font-black">W.</span>
+                            <span class="text-sm font-bold tracking-widest uppercase">+62 812 3456 7890</span>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="space-y-4">
+                    <input type="text" placeholder="Full Name" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-primary-red transition-all">
+                    <input type="email" placeholder="Email Address" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-primary-red transition-all">
+                    <textarea placeholder="Tell us about your project..." rows="4" class="w-full bg-white/5 border border-white/10 p-4 rounded-xl focus:outline-none focus:border-primary-red transition-all"></textarea>
+                    <button class="w-full bg-primary-red text-white py-5 rounded-xl font-black uppercase tracking-widest text-sm shadow-xl shadow-red-500/20 hover:scale-[1.02] transition-transform">
+                        Send Brief
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="pt-24 pb-12 border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+            
+            <div class="space-y-6">
+                <div class="text-2xl font-black tracking-tighter uppercase">Digi<span class="text-primary-red">CORNER</span></div>
+                <p class="text-sm text-black/60 leading-relaxed font-medium">
+                    Partner strategis transformasi digital yang mengubah visi menjadi realitas melalui desain berani dan teknologi mutakhir. We build high-performance digital products for brands with a vision.
+                </p>
+                <div class="pt-4">
+                    <p class="text-[10px] font-black uppercase tracking-widest mb-3">Ikuti kami di media sosial</p>
+                    <div class="flex space-x-3">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl border border-black/5 hover:bg-primary-red hover:text-white transition-all font-bold text-xs">IG</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl border border-black/5 hover:bg-primary-red hover:text-white transition-all font-bold text-xs">LI</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl border border-black/5 hover:bg-primary-red hover:text-white transition-all font-bold text-xs">YT</a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl border border-black/5 hover:bg-primary-red hover:text-white transition-all font-bold text-xs">TK</a>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="font-black text-xs uppercase tracking-[0.2em] mb-8 text-black/30">Menu Cepat</h4>
+                <ul class="space-y-4 text-sm font-bold uppercase tracking-widest text-black/60">
+                    <li><a href="#home" class="hover:text-primary-red transition">Home</a></li>
+                    <li><a href="#about" class="hover:text-primary-red transition">Tentang Kami</a></li>
+                    <li><a href="#services" class="hover:text-primary-red transition">Layanan</a></li>
+                    <li><a href="#" class="hover:text-primary-red transition">Portofolio</a></li>
+                    <li><a href="#" class="hover:text-primary-red transition">Kontak</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-black text-xs uppercase tracking-[0.2em] mb-8 text-black/30">Eksplorasi</h4>
+                <ul class="space-y-4 text-sm font-bold uppercase tracking-widest text-black/60">
+                    <li><a href="#" class="hover:text-primary-red transition">Testimoni</a></li>
+                    <li><a href="#" class="hover:text-primary-red transition">Karier</a></li>
+                    <li><a href="#" class="hover:text-primary-red transition">FAQ</a></li>
+                    <li><a href="#" class="hover:text-primary-red transition">Blog</a></li>
+                    <li><a href="#" class="inline-flex items-center text-primary-red uppercase text-xs font-black group">
+                        Chat Support 
+                        <span class="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="font-black text-xs uppercase tracking-[0.2em] mb-8 text-black/30">Hubungi Kami</h4>
+                <ul class="space-y-4 text-sm text-black/60 font-medium">
+                    <li class="flex items-start">
+                        <span class="mr-3 text-primary-red font-black">A.</span>
+                        <span>Jl. Digital Creative No. 101, <br>Jakarta Selatan, Indonesia</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-primary-red font-black">E.</span>
+                        <a href="mailto:hello@digicorner.com" class="hover:text-black transition">hello@digicorner.com</a>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="mr-3 text-primary-red font-black">P.</span>
+                        <a href="tel:+6281234567890" class="hover:text-black transition">+62 812 3456 7890</a>
+                    </li>
+                </ul>
+                <div class="mt-8 flex gap-4 grayscale opacity-30">
+                    <div class="h-10 w-14 bg-black/5 rounded-lg flex items-center justify-center text-[8px] font-black">SSL SECURE</div>
+                    <div class="h-10 w-14 bg-black/5 rounded-lg flex items-center justify-center text-[8px] font-black">PARTNER</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="pt-10 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
+            <p class="text-black/40 text-[10px] font-black uppercase tracking-[0.2em]">
+                © 2026 DIGICORNER STUDIO. Hak Cipta Dilindungi.
+            </p>
+            <div class="flex space-x-8 text-[10px] font-black uppercase tracking-widest text-black/40">
+                <a href="#" class="hover:text-black transition">Privacy Policy</a>
+                <a href="#" class="hover:text-black transition">Terms of Service</a>
+            </div>
+        </div>
+    </div>
+  </footer>
+
+</body>
+</html>
